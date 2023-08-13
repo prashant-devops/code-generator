@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
-
-openai.api_key = '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'
+api_key = st.secrets["api"]["key"]
+openai.api_key = api_key
 st.title('Automated Code Generator')
 user_input = st.text_input('Describe what you want the code to do:')
 
