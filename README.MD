@@ -1,49 +1,32 @@
-**README.md:**
-
-```
 # Automated Code Generator
 
-## Setup:
+This is a simple web app built with Streamlit and OpenAI's GPT-3 API that generates Python code from a natural language description.
 
-### Backend:
+## Features
 
-1. Navigate to the backend directory:
-```
-cd backend
-```
+- User can enter a description of what they want the code to do
+- App uses GPT-3 API to generate relevant Python code
+- Generated code is displayed nicely formatted in the app
 
-2. Install the required packages:
-```
-pip install -r requirements.txt
-```
+ 
 
-3. Run the Flask API:
-```
-python app.py
-```
+## Usage
 
-### Frontend:
+To use the app:
 
-1. Navigate to the frontend directory:
-```
-cd frontend
-```
+1. Enter an OpenAI API key in the code
+1. Run `streamlit run app.py`
+1. Enter a description of the code you want generated in natural language
+1. App will call GPT-3 API and display generated Python code
 
-2. Install the required packages:
-```
-pip install -r requirements.txt
-```
+ 
 
-3. Run the Streamlit app:
-```
-streamlit run streamlit_app.py
-```
+## Implementation
 
-## Usage:
+The core logic is in the `openai.Completion.create()` call. This uses the Text Davinci 003 engine to generate Python code based on the prompt.
 
-1. Open the Streamlit app in your browser.
-2. Enter a natural language description of the software requirement.
-3. Click "Generate Code" to get the corresponding code snippet.
-```
+The app is built with Streamlit for the UI.
 
-**Note**: The Hugging Face model used here (`gpt2-medium`) is just an example. You can choose other models from the Hugging Face model hub. However, remember that the model isn't specifically trained for code generation, so the results might not always be accurate. Fine-tuning the model on a code generation dataset would yield better results.
+## Credits
+
+Uses OpenAI's GPT-3 API for text completion
